@@ -29,7 +29,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseapp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 const googleprovider= new GoogleAuthProvider();
 googleprovider.setCustomParameters({
     prompt: "select_account"
@@ -47,7 +47,6 @@ export const db=getFirestore();
 export const addCollectionAndDocuments=async (
   collectionKey,
   objectstoAdd,
-  field='title'
 )=> {
   const collectionRef=collection(db,collectionKey);
   const batch=writeBatch(db);
